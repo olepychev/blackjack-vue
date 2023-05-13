@@ -88,7 +88,8 @@ export default {
   mounted() {
     axios
       .get("https://blackjack.ekstern.dev.nav.no/shuffle")
-      .then((response) => console.log(response.data));
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
     this.giveDealerCards();
     this.givePlayerCards();
   },
