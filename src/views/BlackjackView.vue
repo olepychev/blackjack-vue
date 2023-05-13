@@ -90,7 +90,7 @@ export default {
   },
   methods: {
     hit() {
-      if (this.playerHandValue >= 17) return;
+      // if (this.playerHandValue >= 17) return;
 
       this.playerCards.push(this.fetchCard());
 
