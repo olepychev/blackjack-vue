@@ -77,6 +77,7 @@ export default {
       continueButtonEnabled: false,
       action: false,
       shuffle: false,
+      isUserTurn: true,
     };
   },
   components: {
@@ -108,6 +109,7 @@ export default {
       // else if (this.playerHandValue >= 17 && this.playerHandValue <= 21) {
       //   this.stand();
       // }
+      this.isUserTurn = true;
     },
     stand() {
       this.dealerHide = false;
@@ -128,6 +130,7 @@ export default {
         this.shuffleDiscardToDeck();
       }
 
+      this.isUserTurn = false;
       this.action = true;
       this.enableButtons = false;
       this.continueButtonEnabled = true;
@@ -285,7 +288,19 @@ export default {
         class="flex flex-col items-center w-full px-5 sm:w-5/12 gap-3"
         v-if="playing"
       >
-        <h1>{{ dealerHandValue < 0 ? "?" : dealerHandValue }}</h1>
+        <p
+          style="color: black; font-size: 18px; font-weight: bold"
+          v-if="!isUserTurn && !this.continueButtonEnabled"
+        >
+          Magnus Turn
+        </p>
+        <p
+          style="color: black; font-size: 18px; font-weight: bold"
+          v-if="isUserTurn"
+        >
+          Magnus
+        </p>
+        <h1>Score: {{ dealerHandValue < 0 ? "?" : dealerHandValue }}</h1>
         <BlackjackCardTable
           :dealerHide="dealerHide"
           :cards="dealerCards"
@@ -295,7 +310,19 @@ export default {
           :dealerHide="false"
           :cards="playerCards"
         ></BlackjackCardTable>
-        <h1>{{ playerHandValue }}</h1>
+        <h1>Score: {{ playerHandValue }}</h1>
+        <p
+          style="color: black; font-size: 18px; font-weight: bold"
+          v-if="isUserTurn && !this.continueButtonEnabled"
+        >
+          Your Turn
+        </p>
+        <p
+          style="color: black; font-size: 18px; font-weight: bold"
+          v-if="!(isUserTurn && !this.continueButtonEnabled)"
+        >
+          You
+        </p>
       </div>
     </div>
     <!-- <div tabindex="0" class="collapse rounded-box">

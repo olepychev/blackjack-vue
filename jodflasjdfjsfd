@@ -1,0 +1,260 @@
+[33mcommit 6063989b1038c3c548a203c788b9286d7b3db49c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 09:52:12 2023 -0700
+
+    aaa
+
+[33mcommit b85a1f8f59d191aab46fbb7441339fc1eb975c33[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 09:39:47 2023 -0700
+
+    changeD
+
+[33mcommit 477b92e930d69219c6333413f60eb07964f5020b[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 09:39:11 2023 -0700
+
+    changeD
+
+[33mcommit 09f471f4000f44160d192f5b7e955b364dea5d32[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 09:21:31 2023 -0700
+
+    changed
+
+[33mcommit 16c2a23afff5dbe0980a9b0e65ecfde137288b34[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 09:19:40 2023 -0700
+
+    can pick up 17~20
+
+[33mcommit 7b9e5df8cbc49eb78da45b660937555de9316b73[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 02:08:55 2023 -0700
+
+    fixed equal
+
+[33mcommit 7e0c845e4e17b31e88a4fed85c44cbb7bf926fce[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 02:03:48 2023 -0700
+
+    fixed
+
+[33mcommit ec0863cd958d0f4f1dd7ee6413a5e4f7324b101b[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 01:44:41 2023 -0700
+
+    fixed
+
+[33mcommit 8028a435efc34e5f81cc6131d8ff2c325ae5b470[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 00:58:32 2023 -0700
+
+    fixed  next round
+
+[33mcommit 153abfbaf5811198ecd2646e6312ff83efe772a5[m
+Author: bomber0325 <woodstream0325@gmail.com>
+Date:   Sat May 13 00:51:08 2023 -0700
+
+    complete
+
+[33mcommit 9fbe3764a566e63eaf20069c3a256b1bd886dab5[m
+Merge: 53070e4 489ec60
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Mar 12 11:46:58 2023 +0100
+
+    Merge pull request #23 from LucasHazardous/dev
+    
+    2.0.6
+
+[33mcommit 489ec6038cab3a82b37f6cd6326ca5a9775baf0b[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Mar 12 11:42:01 2023 +0100
+
+    2.0.6
+
+[33mcommit 8b62c8a96b5384b5140d968ab95f449870753e3c[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 19:02:39 2023 +0100
+
+    badges in one line, vulnerabilities badge
+
+[33mcommit 09e49ca200d902fc195b36d17d58a6aa33a51a11[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 18:55:57 2023 +0100
+
+    license and repo size badges
+
+[33mcommit 12f65e08c20768fdb82eb38057443030ddc60b04[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:49:20 2023 +0100
+
+    configured scripts
+
+[33mcommit 1dd28d1dfc62512198ff69afd22d825369ed3870[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:48:49 2023 +0100
+
+    version badge
+
+[33mcommit d1a500418ea79222f6a1a5495ecc261a6fa29f17[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:39:54 2023 +0100
+
+    removed redundant points check
+
+[33mcommit 3bcfd47232cad909f9dfda6f3be8ec502ebda97c[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:38:19 2023 +0100
+
+    included tests in build and deploy workflow
+
+[33mcommit e857e992ddeca7f82771a6e11df7c153aa0d94a5[m
+Merge: 905e05c f80705e
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:35:42 2023 +0100
+
+    Merge pull request #22 from LucasHazardous/tests
+    
+    Tests
+
+[33mcommit f80705e85b43fafea30e954029f7620233074afe[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:22:48 2023 +0100
+
+    SlotsView moved into one test suite
+
+[33mcommit 25caf63c02442c0a662b93a258f556bda02125dc[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 11 13:19:08 2023 +0100
+
+    BlackjackView test suite
+
+[33mcommit 9b2dba8e6ce0639cbcc1db750728140c38f5d7f0[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Fri Mar 10 21:19:00 2023 +0100
+
+    slots view test
+
+[33mcommit 905e05cd8bd75671a006839f4f89a8459cefd8e7[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Fri Mar 10 14:36:22 2023 +0100
+
+    changed notification type from error to warning
+
+[33mcommit 0a1b8ec1997f8856525de318e0ce209aeaf87490[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Fri Mar 10 14:29:40 2023 +0100
+
+    BlackjackCardTable test
+
+[33mcommit 7f97d0480fde73e347439328c6ac9bc170e4c954[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Thu Mar 9 22:19:09 2023 +0100
+
+    change select value
+
+[33mcommit d544d49fe9265b4ecd351d6d0e5aa044cf967361[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Thu Mar 9 22:16:50 2023 +0100
+
+    switched from happy-dom to jsdom
+
+[33mcommit dbc7cc99f19947586ed5d6a32b6b0a7608d602bd[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Thu Mar 9 22:01:44 2023 +0100
+
+    slot component test
+
+[33mcommit 3039d87b5ce1b68a4fb32509b5fbc5d9f0073dab[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 4 14:45:25 2023 +0100
+
+    BetSelectButton mount test
+
+[33mcommit 7318eb3870566079aec834691a042ee30eddf95d[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 4 14:44:41 2023 +0100
+
+    vitest config
+
+[33mcommit d0164bc11d519e4c3ee64590b273a9937f170d32[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sat Mar 4 14:44:00 2023 +0100
+
+    installed vite test modules
+
+[33mcommit 53070e4ffc4986c58d64ad2c18809e272d95aab6[m
+Merge: acb94ee 93ee772
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Mon Feb 13 14:54:32 2023 +0100
+
+    Merge branch 'dev'
+
+[33mcommit 93ee7723a9ce3a708ceefdf991fe47aee6b9d0e2[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Mon Feb 13 14:53:55 2023 +0100
+
+    2.0.5
+
+[33mcommit 70e5cba2d8e984325dc0b20be75fdb1c34d54d0b[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Mon Feb 13 14:53:22 2023 +0100
+
+    removed readme header link
+
+[33mcommit 21abe2a53645fb91317bbd25241a88724c7d2d49[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Mon Feb 13 14:52:57 2023 +0100
+
+    new logo
+
+[33mcommit acb94ee78d78abad600c0a313599458ea620084e[m
+Merge: c962079 7b83639
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Wed Feb 8 21:01:13 2023 +0100
+
+    Merge pull request #21 from LucasHazardous/dev
+    
+    2.0.4
+
+[33mcommit 7b8363979ae3339d77c7029f39c86f763caf6c6b[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Wed Feb 8 21:00:24 2023 +0100
+
+    2.0.4
+
+[33mcommit 16d2480de0c07fb0b2775a9b301ed3fa4517b062[m[33m ([m[1;31morigin/hotfix[m[33m)[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Wed Feb 8 20:59:04 2023 +0100
+
+    get font from root path
+
+[33mcommit c96207923f7cf91ebaf91946cedb3a38b5f3d8b6[m
+Merge: 909338f 863ee5c
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Jan 29 17:41:10 2023 +0100
+
+    Merge pull request #20 from LucasHazardous/dev
+    
+    2.0.3
+
+[33mcommit 863ee5c1239923e47cdb966761d062abe1e41a7d[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Jan 29 17:39:38 2023 +0100
+
+    2.0.3
+
+[33mcommit 7f4716776647252e2a405fcf2315391beee353e7[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Jan 29 17:38:30 2023 +0100
+
+    readme main header update
+
+[33mcommit d50542cc4e0c4d005329b1558ceb8eb319c424f6[m
+Author: Lucas Hazardous <70599201+LucasHazardous@users.noreply.github.com>
+Date:   Sun Jan 29 17:35:01 2023 +0100
+
+    readme main header
+
+
