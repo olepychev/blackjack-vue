@@ -2,6 +2,8 @@
 // import BetSelectButton from "../components/BetSelectButton.vue";
 import BlackjackCardTable from "../components/BlackjackCardTable.vue";
 import ToastNotification from "../components/ToastNotification.vue";
+import { API_ENDPOINT } from "../constant/index.js";
+
 import axios from "axios";
 
 export default {
@@ -79,6 +81,9 @@ export default {
       action: false,
       shuffle: false,
       isUserTurn: true,
+      isAPIData: [],
+      endpointUrl: "",
+      isSubmitted: false,
     };
   },
   components: {
@@ -86,12 +91,15 @@ export default {
     BlackjackCardTable,
   },
   mounted() {
-    axios
-      .get("https://blackjack.ekstern.dev.nav.no/shuffle")
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-    this.giveDealerCards();
-    this.givePlayerCards();
+    (async () => {
+      // const data = await axios.get(API_ENDPOINT + this.endpointUrl);
+      // if(data['status'] == 200) {
+      //   this.isAPIData = data['data'];
+      //   this.giveDealerCards();
+      //   this.givePlayerCards();
+      //   this.isSubmitted = true;
+      // }
+    })();
   },
   methods: {
     hit() {
@@ -228,6 +236,25 @@ export default {
         // this.action = false;
       }, 3000);
     },
+
+    changeEndPoint() {
+      (async () => {
+        const data = await axios
+          .get(API_ENDPOINT + this.endpointUrl)
+          .then((data) => {
+            if (data["status"] == 200) {
+              console.log(data["data"]);
+              this.isAPIData = data["data"];
+              this.isSubmitted = true;
+              this.startNewRound();
+            }
+          })
+          .catch((err) => {
+            console.log("Endpoint Error");
+            // this.isSubmitted = false;
+          });
+      })();
+    },
   },
 };
 </script>
@@ -256,7 +283,22 @@ export default {
       <div
         class="flex flex-row flex-wrap sm:flex-col sm:w-1/3 justify-center items-center gap-5"
       >
-        <div class="flex flex-col items-center">
+        <div>
+          <p style="color: black; font-size: 20px; font-weight: bold">
+            EndPoint:
+          </p>
+          <input style="color: black" type="text" v-model="this.endpointUrl" />
+          <button
+            class="btn btn-primary transition-all"
+            style="margin-left: 20px"
+            @click="changeEndPoint"
+            ref="spinButton"
+          >
+            Submit
+          </button>
+        </div>
+
+        <div class="flex flex-col items-center" v-if="this.isSubmitted">
           <h2 class="text-[2em]">Blackjack</h2>
 
           <button
@@ -268,7 +310,10 @@ export default {
           </button>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-5 transition-all">
+        <div
+          class="flex flex-col sm:flex-row gap-5 transition-all"
+          v-if="this.isSubmitted"
+        >
           <div v-if="enableButtons" class="btn-group btn-group-horizontal">
             <button
               class="btn"
@@ -300,7 +345,7 @@ export default {
       <div
         id="game"
         class="flex flex-col items-center w-full px-5 sm:w-5/12 gap-3"
-        v-if="playing"
+        v-if="playing && isSubmitted"
       >
         <p
           style="color: black; font-size: 18px; font-weight: bold"
