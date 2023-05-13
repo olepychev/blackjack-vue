@@ -252,6 +252,14 @@ export default {
       >
         <div class="flex flex-col items-center">
           <h2 class="text-[2em]">Blackjack</h2>
+
+          <button
+            class="btn btn-primary transition-all"
+            @click="startNewRound"
+            ref="spinButton"
+          >
+            Restart
+          </button>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-5 transition-all">
