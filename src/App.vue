@@ -1,9 +1,6 @@
 <script setup>
 import { RouterView } from "vue-router";
 import NavBar from "./components/NavBar.vue";
-
-if (localStorage.getItem("points") === null)
-  localStorage.setItem("points", 1000000);
 </script>
 
 <script>
@@ -15,25 +12,14 @@ const games = [
 export default {
   data() {
     return {
-      points: Number(localStorage.getItem("points")),
       games: games,
     };
   },
-  methods: {
-    changePoints(x) {
-      this.points += x;
-      localStorage.setItem("points", this.points);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <template>
   <NavBar :points="points" />
-  <RouterView
-    class="h-full pb-10 pt-28"
-    :games="games"
-    @changePoints="changePoints"
-    :points="points"
-  />
+  <RouterView class="h-full pb-10 pt-28" :games="games" />
 </template>

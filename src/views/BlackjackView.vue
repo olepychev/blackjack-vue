@@ -4,7 +4,7 @@ import BlackjackCardTable from "../components/BlackjackCardTable.vue";
 import ToastNotification from "../components/ToastNotification.vue";
 
 export default {
-  props: ["points"],
+  props: [],
   data() {
     return {
       playing: true,
@@ -84,7 +84,6 @@ export default {
     BlackjackCardTable,
   },
   mounted() {
-    this.$emit("changePoints", -this.selectedBet);
     this.giveDealerCards();
     this.givePlayerCards();
   },
@@ -133,7 +132,6 @@ export default {
     },
     startNewRound() {
       this.action = false;
-      this.$emit("changePoints", -this.selectedBet);
       this.continueButtonEnabled = false;
       this.dealerHandValue = -1;
       this.clearBothHands();
