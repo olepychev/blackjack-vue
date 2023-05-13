@@ -4,7 +4,7 @@ import BlackjackCardTable from "../components/BlackjackCardTable.vue";
 import ToastNotification from "../components/ToastNotification.vue";
 
 export default {
-  props: [],
+  props: ["points"],
   data() {
     return {
       playing: true,
@@ -96,6 +96,11 @@ export default {
       this.playerHandValue = this.calculateHandValue(this.playerCards);
       if (this.playerHandValue > 21) {
         this.isWin = false;
+        this.action = true;
+        this.enableButtons = false;
+        this.continueButtonEnabled = true;
+      } else if (this.playerHandValue == 21) {
+        this.isWin = true;
         this.action = true;
         this.enableButtons = false;
         this.continueButtonEnabled = true;
