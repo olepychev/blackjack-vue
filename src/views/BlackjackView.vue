@@ -119,7 +119,7 @@ export default {
         this.isWin = true;
       } else if (dealerHandValue > this.playerHandValue) {
         this.isWin = false;
-      } else if (dealerHandValue < this.playerHandValue) {
+      } else if (dealerHandValue <= this.playerHandValue) {
         this.isWin = true;
       }
 
