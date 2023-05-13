@@ -2,6 +2,7 @@
 // import BetSelectButton from "../components/BetSelectButton.vue";
 import BlackjackCardTable from "../components/BlackjackCardTable.vue";
 import ToastNotification from "../components/ToastNotification.vue";
+import axios from "axios";
 
 export default {
   props: ["points"],
@@ -85,6 +86,9 @@ export default {
     BlackjackCardTable,
   },
   mounted() {
+    axios
+      .get("https://blackjack.ekstern.dev.nav.no/shuffle")
+      .then((response) => console.log(response.data));
     this.giveDealerCards();
     this.givePlayerCards();
   },
