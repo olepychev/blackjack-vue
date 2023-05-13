@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       playing: true,
+      isWin: true,
       selectedBet: 25000,
       lastReward: 0,
       blackjackBets: [25000, 50000],
@@ -89,11 +90,20 @@ export default {
   },
   methods: {
     hit() {
-      if (this.playerHandValue > 20) return;
+      if (this.playerHandValue >= 17) return;
 
       this.playerCards.push(this.fetchCard());
 
       this.playerHandValue = this.calculateHandValue(this.playerCards);
+      if (this.playerHandValue > 21) {
+        this.isWin = false;
+        this.action = true;
+        setTimeout(() => {
+          if (!this.shuffle) this.action = false;
+        }, 1000);
+      } else if (this.playerHandValue >= 17 && this.playerHandValue <= 21) {
+        this.stand();
+      }
     },
     stand() {
       this.dealerHide = false;
@@ -103,18 +113,11 @@ export default {
       const dealerHandValue = this.calculateHandValue(this.dealerCards);
       this.dealerHandValue = dealerHandValue;
 
-      let lastReward = this.selectedBet;
-      if (this.playerHandValue > 21 && dealerHandValue > 21);
-      else if (this.playerHandValue > 21) lastReward -= this.selectedBet;
-      else if (dealerHandValue > 21) lastReward += this.selectedBet;
-      else if (this.playerHandValue > dealerHandValue)
-        lastReward += this.selectedBet;
-      else if (dealerHandValue > this.playerHandValue)
-        lastReward -= this.selectedBet;
+      if (dealerHandValue > 21) this.isWin = true;
+      if (dealerHandValue > this.playerHandValue) this.isWin = false;
+      if (dealerHandValue < this.playerHandValue) this.isWin = true;
 
       this.action = true;
-      this.$emit("changePoints", lastReward);
-      this.lastReward = lastReward;
 
       this.enableButtons = false;
       this.continueButtonEnabled = true;
@@ -140,12 +143,13 @@ export default {
       for (let i = 0; i < arr.length; i++) {
         const cardValue = arr[i].slice(2, 4);
 
-        if (cardValue === "A") aceCount++;
+        if (cardValue === "A") value += 11;
         else if (!isNaN(cardValue)) value += Number(cardValue);
         else value += 10;
       }
 
       value += aceCount;
+      // if (value <= 11 && aceCount > 0) value += 10;
       if (value <= 11 && aceCount > 0) value += 10;
       return value;
     },
@@ -154,6 +158,15 @@ export default {
       this.playerCards.push(this.fetchCard());
 
       this.playerHandValue = this.calculateHandValue(this.playerCards);
+      if (this.playerHandValue == 21) {
+        this.isWin = true;
+        this.action = true;
+        setTimeout(() => {
+          if (!this.shuffle) this.action = false;
+        }, 1000);
+      } else if (this.playerHandValue >= 17 && this.playerHandValue < 21) {
+        this.stand();
+      }
     },
     giveDealerCards() {
       this.dealerHide = true;
@@ -204,7 +217,15 @@ export default {
   >
     <ToastNotification
       :shuffle="shuffle"
+      v-if="isWin"
       :message="'You are Winner!'"
+      class="transition-all"
+      :class="action ? 'translate-x-0' : 'translate-x-96'"
+    />
+    <ToastNotification
+      :shuffle="shuffle"
+      v-if="!isWin"
+      :message="'You are Loser!'"
       class="transition-all"
       :class="action ? 'translate-x-0' : 'translate-x-96'"
     />
