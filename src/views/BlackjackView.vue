@@ -139,6 +139,7 @@ export default {
       // }, 1000);
     },
     startNewRound() {
+      this.isUserTurn = true;
       this.action = false;
       this.continueButtonEnabled = false;
       this.dealerHandValue = -1;
