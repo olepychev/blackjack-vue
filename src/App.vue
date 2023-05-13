@@ -20,6 +20,6 @@ export default {
 </script>
 
 <template>
-  <NavBar :points="points" />
+  <NavBar />
   <RouterView class="h-full pb-10 pt-28" :games="games" />
 </template>
