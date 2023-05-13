@@ -123,8 +123,6 @@ export default {
       }, 1000);
     },
     startNewRound() {
-      if (this.points - this.selectedBet < 0) return;
-
       this.$emit("changePoints", -this.selectedBet);
 
       this.continueButtonEnabled = false;
