@@ -98,9 +98,11 @@ export default {
       if (this.playerHandValue > 21) {
         this.isWin = false;
         this.action = true;
-        setTimeout(() => {
-          if (!this.shuffle) this.action = false;
-        }, 1000);
+        this.enableButtons = false;
+        this.continueButtonEnabled = true;
+        // setTimeout(() => {
+        // if (!this.shuffle) this.action = false;
+        // }, 1000);
       } else if (this.playerHandValue >= 17 && this.playerHandValue <= 21) {
         this.stand();
       }
@@ -113,29 +115,32 @@ export default {
       const dealerHandValue = this.calculateHandValue(this.dealerCards);
       this.dealerHandValue = dealerHandValue;
 
-      if (dealerHandValue > 21) this.isWin = true;
-      if (dealerHandValue > this.playerHandValue) this.isWin = false;
-      if (dealerHandValue < this.playerHandValue) this.isWin = true;
+      if (dealerHandValue > 21) {
+        this.isWin = true;
+      } else if (dealerHandValue > this.playerHandValue) {
+        this.isWin = false;
+      } else if (dealerHandValue < this.playerHandValue) {
+        this.isWin = true;
+      }
 
       this.action = true;
-
       this.enableButtons = false;
       this.continueButtonEnabled = true;
-      setTimeout(() => {
-        if (!this.shuffle) this.action = false;
-      }, 1000);
+      // setTimeout(() => {
+      //   if (!this.shuffle) this.action = false;
+      // }, 1000);
     },
     startNewRound() {
+      this.action = false;
       this.$emit("changePoints", -this.selectedBet);
-
       this.continueButtonEnabled = false;
       this.dealerHandValue = -1;
       this.clearBothHands();
       this.discardedCards = this.discardedCards.concat(this.cardsInPlay);
       this.cardsInPlay = [];
+      this.enableButtons = true;
       this.giveDealerCards();
       this.givePlayerCards();
-      this.enableButtons = true;
     },
     calculateHandValue(arr) {
       let aceCount = 0;
@@ -160,6 +165,8 @@ export default {
       this.playerHandValue = this.calculateHandValue(this.playerCards);
       if (this.playerHandValue == 21) {
         this.isWin = true;
+        this.enableButtons = false;
+        this.continueButtonEnabled = true;
         this.action = true;
         setTimeout(() => {
           if (!this.shuffle) this.action = false;
@@ -195,7 +202,7 @@ export default {
       this.deckCards = this.discardedCards;
       this.discardedCards = [];
       this.shuffle = true;
-      this.action = true;
+      // this.action = true;
       for (let i = this.deckCards.length - 1; i > 0; i--) {
         const r = Math.floor(Math.random() * (i + 1));
         const tmp = this.deckCards[i];
@@ -204,7 +211,7 @@ export default {
       }
       setTimeout(() => {
         this.shuffle = false;
-        this.action = false;
+        // this.action = false;
       }, 3000);
     },
   },
@@ -238,23 +245,7 @@ export default {
         <div class="flex flex-col items-center">
           <h2 class="text-[2em]">Blackjack</h2>
         </div>
-        <!-- <div class="flex flex-col sm:flex-row gap-5 transition-all">
-          <BetSelectButton
-            :class="playing ? 'select-disabled' : 'select-active'"
-            :bets="blackjackBets"
-            id="betSelect"
-            ref="betSelect"
-            :disabled="playing"
-          />
-          <button
-            class="btn btn-primary transition-all"
-            @click="startGame"
-            ref="spinButton"
-            :disabled="playing"
-          >
-            Play
-          </button>
-        </div> -->
+
         <div class="flex flex-col sm:flex-row gap-5 transition-all">
           <div v-if="enableButtons" class="btn-group btn-group-horizontal">
             <button class="btn" @click="hit" ref="spinButton">Hit</button>
