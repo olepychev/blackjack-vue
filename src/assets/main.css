@@ -27,10 +27,10 @@
 
 html,
 body {
-  background-color: rgb(88, 28, 135);
+  background-color: rgb(28, 135, 37);
   background-image: radial-gradient(
       at 85% 46%,
-      rgb(28, 25, 23) 0,
+      rgb(35, 175, 91) 0,
       transparent 76%
     ),
     radial-gradient(at 29% 61%, rgb(59, 130, 246) 0, transparent 65%),

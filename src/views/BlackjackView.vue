@@ -100,12 +100,10 @@ export default {
         this.action = true;
         this.enableButtons = false;
         this.continueButtonEnabled = true;
-        // setTimeout(() => {
-        // if (!this.shuffle) this.action = false;
-        // }, 1000);
-      } else if (this.playerHandValue >= 17 && this.playerHandValue <= 21) {
-        this.stand();
       }
+      // else if (this.playerHandValue >= 17 && this.playerHandValue <= 21) {
+      //   this.stand();
+      // }
     },
     stand() {
       this.dealerHide = false;
@@ -117,10 +115,13 @@ export default {
 
       if (dealerHandValue > 21) {
         this.isWin = true;
+        this.shuffleDiscardToDeck();
       } else if (dealerHandValue > this.playerHandValue) {
         this.isWin = false;
+        this.shuffleDiscardToDeck();
       } else if (dealerHandValue <= this.playerHandValue) {
         this.isWin = true;
+        this.shuffleDiscardToDeck();
       }
 
       this.action = true;
@@ -171,9 +172,10 @@ export default {
         setTimeout(() => {
           if (!this.shuffle) this.action = false;
         }, 1000);
-      } else if (this.playerHandValue >= 17 && this.playerHandValue < 21) {
-        this.stand();
       }
+      // else if (this.playerHandValue >= 17 && this.playerHandValue < 21) {
+      //   this.stand();
+      // }
     },
     giveDealerCards() {
       this.dealerHide = true;
@@ -248,8 +250,20 @@ export default {
 
         <div class="flex flex-col sm:flex-row gap-5 transition-all">
           <div v-if="enableButtons" class="btn-group btn-group-horizontal">
-            <button class="btn" @click="hit" ref="spinButton">Hit</button>
-            <button class="btn" @click="stand" id="autospinButton">
+            <button
+              class="btn"
+              @click="hit"
+              ref="spinButton"
+              style="margin-right: 10px"
+            >
+              Hit
+            </button>
+            <button
+              class="btn"
+              @click="stand"
+              id="autospinButton"
+              style="color: blue; background-color: white"
+            >
               Stand
             </button>
           </div>
